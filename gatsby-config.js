@@ -1,27 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Laura Van Haecke | Screen writer and Director`,
+    author: `Jan Van den Enden`,
+    description: `A portfolio website of screen writer and director Laura Van Haecke.`,
+    siteUrl: `https://www.lauravanhaecke.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `kylemathews`
     },
   },
   plugins: [
+    `gatsby-plugin-playground`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/projects`,
+        name: `projects`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
+        name: `img`,
+        path: `${__dirname}/src/img/`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -67,12 +68,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

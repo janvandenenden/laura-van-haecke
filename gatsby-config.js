@@ -9,11 +9,12 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-playground`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/projects`,
+        path: `${__dirname}/src/`,
         name: `projects`,
       },
     },
@@ -21,7 +22,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
-        path: `${__dirname}/src/img/`
+        path: `${__dirname}/src/img`
       }
     },
     {

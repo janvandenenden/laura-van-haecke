@@ -1,33 +1,76 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Img from "gatsby-image";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import projectStyles from "../styles/project.module.scss";
 
 export const query = graphql`
-query($slug: String) {
-  markdownRemark(fields: { slug: { eq: $slug } }) {
-    frontmatter {
-      title
-      date
-      crew
-      type
+  query($slug: String) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        type
+        url
+        info
+        img {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   }
-}
-`
- 
+`;
+
 const Project = props => {
-  console.log(props)
+  console.log(props);
+  const description = () => {
+    const result = props.data.markdownRemark.frontmatter.info.map(x => {
+      return(
+        <p>{x}</p>
+      )
+    })
+    return result
+  }
   return (
     <Layout>
-        <div >
-          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-          <p>{props.data.markdownRemark.frontmatter.date}</p>
-        </div>
-        
-       
-    </Layout>
-  )
-}
+      <Container className={projectStyles.content}>
+        <Row className={projectStyles.row}>
+          <Col className={projectStyles.title}>
+            <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+            <h2>{props.data.markdownRemark.frontmatter.type}</h2>
+          </Col>
+        </Row>
 
-export default Project
+        <Row className={projectStyles.row}>
+          <Col>
+          <div style={{padding:"56.25% 0 0 0",position:"relative"}}><iframe src={`${props.data.markdownRemark.frontmatter.url}?portrait=0`} style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}} frameBorder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+          </Col>
+        </Row>
+
+        <Row className={projectStyles.row}>
+          <Col md={4} className={projectStyles.information} >
+            <p><span>Type</span><br/>{props.data.markdownRemark.frontmatter.type}</p>
+            <div><span>Description</span><br/>{description()}</div>
+          </Col>
+          <Col md={8}>
+            <Img
+              fluid={{
+                ...props.data.markdownRemark.frontmatter.img[0].childImageSharp
+                  .fluid,
+                aspectRatio: 16 / 9
+              }}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
+  );
+};
+
+export default Project;

@@ -1,0 +1,10 @@
+.nav {
+    background-color: #1D1E18;
+    .navlink {
+        color:#FCFFFC !important;
+        &:hover{
+            text-decoration: none;
+            color:#FCFFFC !important;
+        }
+    }
+}

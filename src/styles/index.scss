@@ -1,0 +1,42 @@
+$break-large: 992px;
+
+body {
+  color: #1d1e18;
+  background-color: #fcfffc;
+  .hero {
+    height: calc(100vh - 56px);
+    background-color: #fcfffc !important;
+    display: flex;
+    margin-top: 56px;
+    @media screen and (max-width: $break-large) {
+      text-align: center;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 1rem;
+      }
+    }
+    .hero-image {
+      height: 100%;
+      @media screen and (max-width: $break-large) {
+        display: none;
+      }
+    }
+  }
+  
+  .projects {
+    padding:2rem 0;
+    text-align: center;
+    background-color: #1d1e18;
+    h1 {
+      padding: 2rem 0;
+    color:#fcfffc;
+    }
+  }
+  
+}
+
+

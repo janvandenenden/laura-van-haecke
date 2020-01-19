@@ -1,8 +1,7 @@
 import React from "react"
 import MainNav from "./Header"
 import Footer from "./Footer"
-// import "../styles/index.scss"
-// import layoutStyles from "../styles/layout.module.scss"
+import "../styles/index.scss"
 
 
 const Layout = props => {

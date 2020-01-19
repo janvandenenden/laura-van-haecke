@@ -1,0 +1,23 @@
+.body{
+    background-color: green;
+}
+
+.content {
+    padding:4rem 0;
+}
+
+.title {
+    text-align: center;
+    padding:2rem 0;
+}
+
+.row {
+    padding:1rem 0;
+}
+
+.information{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

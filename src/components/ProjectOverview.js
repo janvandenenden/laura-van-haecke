@@ -38,20 +38,22 @@ const ProjectOverview = () => {
   const ProjectOverviewList = data.allMarkdownRemark.edges.map(x => {
     console.log(x);
     return (
-      <Col sm={12} lg={6} style={{paddingRight:0}}>
+      <Col sm={12} lg={6} style={{ paddingRight: 0 }} className={projectOverview.scrollElement}>
         <Link to={x.node.fields.slug} className={projectOverview.link}>
-          <div
-            className={projectOverview.item}
-            style={{
-              backgroundImage: `url(${x.node.frontmatter.img[0].childImageSharp.fluid.src})`
-            }}
-          >
-            <p className={projectOverview.itemText}>
-              {x.node.frontmatter.title}
-            </p>
-            <p className={projectOverview.itemText}>
-              {x.node.frontmatter.type}
-            </p>
+          <div className={projectOverview.parent}>
+            <div
+              className={projectOverview.item}
+              style={{
+                backgroundImage: `url(${x.node.frontmatter.img[0].childImageSharp.fluid.src})`
+              }}
+            >
+              <p className={projectOverview.itemText}>
+                {x.node.frontmatter.title}
+              </p>
+              <p className={projectOverview.itemText}>
+                {x.node.frontmatter.type}
+              </p>
+            </div>
           </div>
         </Link>
       </Col>
@@ -60,7 +62,7 @@ const ProjectOverview = () => {
   return (
     <React.Fragment>
       <h1>Projects</h1>
-      <Row style={{marginRight:0}}>{ProjectOverviewList}</Row>
+      <Row style={{ marginRight: 0 }} className={projectOverview.scrollContainer}>{ProjectOverviewList}</Row>
     </React.Fragment>
   );
 };

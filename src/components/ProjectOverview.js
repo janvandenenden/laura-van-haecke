@@ -38,7 +38,7 @@ const ProjectOverview = () => {
   const ProjectOverviewList = data.allMarkdownRemark.edges.map(x => {
     console.log(x);
     return (
-      <Col sm={12} lg={6}>
+      <Col sm={12} lg={6} style={{paddingRight:0}}>
         <Link to={x.node.fields.slug} className={projectOverview.link}>
           <div
             className={projectOverview.item}
@@ -60,7 +60,7 @@ const ProjectOverview = () => {
   return (
     <React.Fragment>
       <h1>Projects</h1>
-      <Row>{ProjectOverviewList}</Row>
+      <Row style={{marginRight:0}}>{ProjectOverviewList}</Row>
     </React.Fragment>
   );
 };

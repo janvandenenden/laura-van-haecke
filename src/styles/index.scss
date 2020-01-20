@@ -4,12 +4,21 @@ body {
   color: #1d1e18;
   background-color: #fcfffc;
   .hero {
-    height: calc(100vh - 56px);
+    height: calc(100% - 56px);
     background-color: #fcfffc !important;
     display: flex;
     margin-top: 56px;
     @media screen and (max-width: $break-large) {
       text-align: center;
+    }
+    a {
+      button {
+        background-color: transparent;
+        color:#1d1e18;
+        border:1px solid #1d1e18;
+        box-shadow: 1px 1px 1px #1d1e18;
+        align-self: center;
+      }
     }
     .hero-text {
       display: flex;
@@ -26,17 +35,14 @@ body {
       }
     }
   }
-  
+
   .projects {
-    padding:2rem 0;
+    padding: 2rem 0;
     text-align: center;
     background-color: #1d1e18;
     h1 {
       padding: 2rem 0;
-    color:#fcfffc;
+      color: #fcfffc;
     }
   }
-  
 }
-
-

@@ -6,6 +6,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import projectStyles from "../styles/project.module.scss";
+import Carousel from "react-bootstrap/Carousel";
+
 
 export const query = graphql`
   query($slug: String) {
@@ -55,17 +57,31 @@ const Project = props => {
 
         <Row className={projectStyles.row}>
           <Col md={4} className={projectStyles.information} >
-            <p><span>Type</span><br/>{props.data.markdownRemark.frontmatter.type}</p>
-            <div><span>Description</span><br/>{description()}</div>
+            <div><p><span>Type</span></p> <p>{props.data.markdownRemark.frontmatter.type}</p></div>
+            <div><p><span>Description</span></p>{description()}</div>
           </Col>
           <Col md={8}>
+          
+          <Carousel>
+          <Carousel.Item>
             <Img
+              className="d-block w-100"
+              fluid={{
+                ...props.data.markdownRemark.frontmatter.img[0].childImageSharp
+                  .fluid
+              }}
+              alt="First slide"
+            />
+          </Carousel.Item>
+          </Carousel>
+            
+            {/* <Img
               fluid={{
                 ...props.data.markdownRemark.frontmatter.img[0].childImageSharp
                   .fluid,
                 aspectRatio: 16 / 9
               }}
-            />
+            /> */}
           </Col>
         </Row>
       </Container>

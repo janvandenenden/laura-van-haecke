@@ -1,9 +1,28 @@
 $break-large: 992px;
+@mixin setLinkSelectorStyle {
+    &:visited,  &:focus{
+        background-color: transparent;
+        color:#1d1e18;
+        border:1px solid #1d1e18;
+        box-shadow: 1px 1px 1px #1d1e18;
+      }
+    &:hover,  &:active{
+        color:#fcfffc;
+        background-color: #1d1e18 !important;
+        border:1px solid #fcfffc;
+        box-shadow: 1px 1px 1px #fcfffc;
+      }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 
 body {
   color: #1d1e18;
   background-color: #fcfffc;
   .hero {
+    min-height: calc(100vh - 56px);
     height: calc(100% - 56px);
     background-color: #fcfffc !important;
     display: flex;
@@ -11,13 +30,25 @@ body {
     @media screen and (max-width: $break-large) {
       text-align: center;
     }
-    a {
-      button {
+        a {
+        align-self: center;
+        margin:1rem 0;
+
+       button {
         background-color: transparent;
         color:#1d1e18;
         border:1px solid #1d1e18;
         box-shadow: 1px 1px 1px #1d1e18;
-        align-self: center;
+        @include setLinkSelectorStyle 
+        // &:hover &:active {
+        //     color:#fcfffc;
+        //     background-color: #1d1e18;
+        //     border:1px solid #fcfffc;
+        //     box-shadow: 1px 1px 1px #fcfffc;
+
+
+        
+        }
       }
     }
     .hero-text {
@@ -44,5 +75,4 @@ body {
       padding: 2rem 0;
       color: #fcfffc;
     }
-  }
 }

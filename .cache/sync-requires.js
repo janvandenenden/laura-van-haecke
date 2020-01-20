@@ -6,7 +6,6 @@ const preferDefault = m => m && m.default || m
 
 exports.components = {
   "component---src-templates-project-post-js": hot(preferDefault(require("/Users/janvandenenden/Desktop/web design and programming/laura-van-haecke/src/templates/project-post.js"))),
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/janvandenenden/Desktop/web design and programming/laura-van-haecke/.cache/dev-404-page.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/Users/janvandenenden/Desktop/web design and programming/laura-van-haecke/src/pages/index.js"))),
   "component---src-pages-projects-js": hot(preferDefault(require("/Users/janvandenenden/Desktop/web design and programming/laura-van-haecke/src/pages/projects.js")))
 }

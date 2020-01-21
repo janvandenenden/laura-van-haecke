@@ -1,13 +1,20 @@
 * {
   .footer {
-    background-color: #1d1e18;
+    background-color: #0B0B09;
     text-align: center;
     margin:0;
     padding:1rem 0;
-    p {
+    a {
       color: #fcfffc;
       background-color: transparent;
       margin:0;
+      font-size:0.6rem;
+    }
+    .socmedia > a{
+      font-size:2rem;
+      padding: 0 2rem;
     }
   }
 }
+
+

@@ -16,9 +16,9 @@ const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.socmedia}>
-        <a href="" target="_blank"> <FaVimeo /></a>
-        <a href="" target="_blank">  <FaImdb /></a>
-        <a href="" target="_blank">  <FaInstagram /></a>
+        <a href="https://vimeo.com/lauravanhaecke" target="_blank"> <FaVimeo /></a>
+        <a href="https://www.imdb.com/name/nm2142298/" target="_blank">  <FaImdb /></a>
+        <a href="https://www.instagram.com/lauravanhaecke/" target="_blank">  <FaInstagram /></a>
       </div>
       <a href="https://www.w3schools.com" target="_blank">
         &copy; 2020

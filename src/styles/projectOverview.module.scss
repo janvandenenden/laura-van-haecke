@@ -1,3 +1,5 @@
+@import '/index.scss';
+
 $break-large: 992px;
 
 .link {
@@ -41,7 +43,7 @@ $break-large: 992px;
       background-color: transparent;
       font-size: 2rem;
       font-weight: bolder;
-      color: #fcfffc;
+      color: $secondary-color;
       text-decoration: none;
       padding: 0 4rem;
     }

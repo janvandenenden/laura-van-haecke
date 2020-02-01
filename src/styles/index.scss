@@ -1,16 +1,19 @@
+$primary-color:#0B0B09;
+$secondary-color:#fcfffc;
 $break-large: 992px;
+
 @mixin setLinkSelectorStyle {
     &:visited,  &:focus{
         background-color: transparent;
-        color:#1d1e18;
-        border:1px solid #1d1e18;
-        box-shadow: 1px 1px 1px #1d1e18;
+        color:$primary-color;
+        border:1px solid $primary-color;
+        box-shadow: 1px 1px 1px $primary-color;
       }
     &:hover,  &:active{
-        color:#fcfffc;
-        background-color: #1d1e18 !important;
-        border:1px solid #fcfffc;
-        box-shadow: 1px 1px 1px #fcfffc;
+        color:$secondary-color;
+        background-color: $primary-color !important;
+        border:1px solid $secondary-color;
+        box-shadow: 1px 1px 1px $secondary-color;
       }
   }
 
@@ -19,14 +22,15 @@ $break-large: 992px;
   }
 
 body {
-  color: #1d1e18;
+  color: $primary-color;
   background-color: #fcfffc;
   .hero {
     min-height: calc(100vh - 56px);
     height: calc(100% - 56px);
-    background-color: #fcfffc !important;
+    background-color: $secondary-color !important;
     display: flex;
     margin-top: 56px;
+    margin-bottom: 0;
     @media screen and (max-width: $break-large) {
       text-align: center;
     }
@@ -36,13 +40,13 @@ body {
 
        button {
         background-color: transparent;
-        color:#1d1e18;
-        border:1px solid #1d1e18;
-        box-shadow: 1px 1px 1px #1d1e18;
+        color:$primary-color;
+        border:1px solid $primary-color;
+        box-shadow: 1px 1px 1px $primary-color;
         @include setLinkSelectorStyle 
         // &:hover &:active {
         //     color:#fcfffc;
-        //     background-color: #1d1e18;
+        //     background-color: $primary-color;
         //     border:1px solid #fcfffc;
         //     box-shadow: 1px 1px 1px #fcfffc;
 

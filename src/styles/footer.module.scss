@@ -1,11 +1,13 @@
+@import '/index.scss';
+
 * {
   .footer {
-    background-color: #0B0B09;
+    background-color: $primary-color;
     text-align: center;
     margin:0;
     padding:1rem 0;
     a {
-      color: #fcfffc;
+      color: $secondary-color;
       background-color: transparent;
       margin:0;
       font-size:0.6rem;
@@ -13,7 +15,17 @@
     .socmedia > a{
       font-size:2rem;
       padding: 0 2rem;
+      &:hover{
+        text-decoration: none;
+        color:$secondary-color;
+      }
     }
+    .socmedia > a#vimeo > svg  {
+      color:$primary-color;
+      padding-top: 3rem;
+      font-size:44rem;
+    }
+    
   }
 }
 

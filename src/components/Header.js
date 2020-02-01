@@ -14,7 +14,7 @@ const Navigation = () => {
             <Nav className={"ml-auto " + headerStyles.nav}>
             <Link className={headerStyles.navlink + " nav-link"} to="projects">Projects</Link>
             {/* <Link className={"nav-link " + headerStyles.navlink} to="/blog">Blog</Link> */}
-            <Link className={headerStyles.navlink + " nav-link"} to="/resume">News</Link>
+            {/* <Link className={headerStyles.navlink + " nav-link"} to="/resume">News</Link> */}
             <Link className={headerStyles.navlink + " nav-link"} to="/contact">Contact</Link>
             </Nav>
         </Navbar.Collapse>

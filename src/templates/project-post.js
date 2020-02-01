@@ -41,6 +41,7 @@ const Project = props => {
   }
   return (
     <Layout>
+      <div className={projectStyles.content}>
       <Container className={projectStyles.content}>
         <Row className={projectStyles.row}>
           <Col className={projectStyles.title}>
@@ -85,6 +86,7 @@ const Project = props => {
           </Col>
         </Row>
       </Container>
+      </div>
     </Layout>
   );
 };

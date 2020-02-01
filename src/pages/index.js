@@ -24,10 +24,10 @@ export const query = graphql`
   }
 `;
 
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
+var prevScrollpos = global.pageYOffset;
+global.onscroll = function() {
     console.log("scrol")
-  var currentScrollPos = window.pageYOffset;
+  var currentScrollPos = global.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementsByClassName("navbar")[0].style.top = "0";
   } else {

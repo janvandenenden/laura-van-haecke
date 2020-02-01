@@ -24,8 +24,9 @@ export const query = graphql`
   }
 `;
 
-var prevScrollpos = global.pageYOffset;
-global.onscroll = function() {
+if (typeof window !== `undefined`) {
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
     console.log("scrol")
   var currentScrollPos = global.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
@@ -35,7 +36,7 @@ global.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
-
+}
 const indexPage = props => {
   console.log(props);
   return (
